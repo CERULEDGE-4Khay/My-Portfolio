@@ -1,11 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PORTOFOLIO</title>
+    <title>Personal Portfolio | Creative Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">MY<span>PORTFOLIO</span></div>
+
+        <input type="checkbox" id="menu-check">
+        <label for="menu-check" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#hobbies">Hobbies</a>
+            <button id="theme-toggle">🌙 Dark Mode</button>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="welcome-text">WELCOME TO MY WORLD</p>
+                <h1>Hi, I’m <span class="highlight">Khay</span><br>
+                    a Junior <span class="highlight">Software</span><br>
+                    <span class="sub-text">Developer.</span>
+                </h1>
+                <p class="description">
+                    Membangun pengalaman digital yang fungsional dan estetis. 
+                    Fokus pada detail dan kepuasan pengguna.
+                </p>
+                
+                <div class="hero-footer">
+                    <div class="social-box">
+                        <p>FIND WITH ME</p>
+                        <div class="icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <p>BEST SKILL ON</p>
+                        <div class="icons">
+                            <span><i class="fas fa-paint-brush"></i></span>
+                            <span><i class="fas fa-laptop-code"></i></span>
+                            <span><i class="fas fa-mobile-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-bg-card">
+                    <img src="aset/khay.PNG" alt="Khay Profile">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Project Name</h3>
+                    <p>Web Design & Development</p>
+                </div>
+            </div>
+             <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Project Name</h3>
+                    <p>Web Design & Development</p>
+                </div>
+            </div>
+             <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Project Name</h3>
+                    <p>Web Design & Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2 class="section-title">Hobbies & Interests</h2>
+        <div class="hobbies-container">
+            <div class="hobby-card">
+                <i class="fas fa-camera"></i>
+                <h3>Photography</h3>
+                <p>Capturing moments and creating visual stories.</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-music"></i>
+                <h3>Music</h3>
+                <p>Exploring different genres and creating playlists.</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-book"></i>
+                <h3>Reading</h3>
+                <p>Diving into fiction and non-fiction books.</p>
+            </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                
+                <input type="hidden" name="access_key" value="fff6bf40-7df9-4db4-aa90-9bb4ef19ffee">
+
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Nama Kamu" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email Kamu" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" rows="5" placeholder="Pesan untuk saya..." required></textarea>
+                </div>
+
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <button type="submit" class="btn btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+// Cek apakah user sebelumnya sudah memilih Dark Mode
+if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleBtn.textContent = '☀️ Light Mode';
+}
+
+toggleBtn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
     
+    if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+    }
+});
+</script>
 </body>
 </html>
