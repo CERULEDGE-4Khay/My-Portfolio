@@ -40,10 +40,10 @@ cd My-Portfolio
 Buka di Browser
 Cukup buka file index.html menggunakan browser pilihan Anda atau gunakan ekstensi Live Server di VS Code.
 
-📸 Tampilan Website
-`![Preview Portofolio](aset/allpage-portfolio.png)`
+📸 **Tampilan Website**
+[![Preview Website Portofolio](aset/allpage-portfolio.png)](https://CERULEDGE-4Khay.github.io/My-Portfolio/)
 
-🔗 Live Preview: Lihat Website Saya Di Sini
+🔗 **Live Preview:** [Lihat Website Saya Di Sini](https://CERULEDGE-4Khay.github.io/My-Portfolio/)
 
 🤝 Mari Terhubung!
 Saya selalu terbuka untuk kolaborasi, diskusi mengenai pengembangan web, atau peluang kerja baru. Jangan ragu untuk menyapa!
