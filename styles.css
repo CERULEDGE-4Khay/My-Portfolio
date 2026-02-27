@@ -49,12 +49,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: var(--nav-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: 0.3s;
+    width: 100%;
 }
 
 #menu-check, .menu-btn { display: none; } /* Sembunyikan toggle di desktop */
@@ -110,6 +111,7 @@ body {
     display: flex;
     align-items: center;
     background: var(--secondary-bg);
+    margin-top: 20px;
 }
 
 .hero-container {
@@ -155,6 +157,11 @@ body {
     margin-bottom: 15px;
 }
 
+.icons:hover{
+    transform: translateY(-5px);
+    transition: 0.5s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 .icons { display: flex; gap: 15px; }
 
 .icons a, .icons span {
@@ -271,13 +278,12 @@ body {
     background: darken(var(--primary-color), 10%);
 }
 /* 4. PROJECTS & SECTIONS */
-.section { padding: 80px 8%; }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+.section { padding: 100px 8%; }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .project-card {
@@ -287,13 +293,11 @@ body {
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 0;
+    position: relative;
 }
 
 .project-img {
-    height: 220px;
-    background: url{'aset/home-absensi.png'};
-    background-size: cover;
+    height: 240px;
     position: relative;
     overflow: hidden;
 }
@@ -302,42 +306,218 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
 }
 
-/* Efek hiasan di dalam gambar project */
-.project-img::after {
-    content: "VIEW PROJECT";
+/* Overlay Efek */
+.project-overlay {
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    color: white;
-    font-weight: 700;
-    font-size: 0.9rem;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 92, 158, 0.8); /* Warna primary dengan transparansi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
-.project-card:hover .project-img::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+.view-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transform: translateY(20px);
+    transition: 0.4s;
 }
 
-.project-info { 
-    padding: 25px; 
+/* Info & Tags */
+.project-info { padding: 25px; }
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.project-tags span {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    background: rgba(0, 92, 158, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
 }
 
 .project-info h3 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 1.4rem;
+    color: var(--text-color);
 }
 
+.project-info p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* --- HOVER STATES --- */
 .project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
     border-color: var(--primary-color);
 }
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .view-btn {
+    transform: translateY(0);
+}
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 100px 8%;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Sisi Foto */
+.about-img-side {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--card-bg);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    z-index: 2;
+    border: 8px solid var(--card-bg);
+}
+
+.img-container img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+/* Badge Pengalaman */
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(0, 92, 158, 0.4);
+}
+
+.experience-badge .num { font-size: 2rem; font-weight: 800; }
+.experience-badge .text { font-size: 12px; font-weight: 500; line-height: 1.2; }
+
+/* Blob Background */
+.shape-blob {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: var(--primary-color);
+    filter: blur(80px);
+    opacity: 0.15;
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    z-index: 1;
+}
+
+/* Sisi Teks */
+.about-content-side { flex: 1.2; }
+
+.section-subtitle {
+    color: var(--primary-color);
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-desc {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.info-item .label { font-weight: 700; color: var(--text-color); margin-right: 5px; }
+.info-item .value { color: var(--text-muted); }
+
+.stats-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.stat-card h3 { color: var(--primary-color); font-size: 1.8rem; }
+.stat-card p { font-size: 14px; color: var(--text-muted); }
+
+/* Responsif */
+@media (max-width: 992px) {
+    .about-wrapper { flex-direction: column; text-align: center; }
+    .personal-info { grid-template-columns: 1fr; text-align: left; }
+    .stats-grid { justify-content: center; }
+    .experience-badge { right: 50%; transform: translateX(50%); }
+}
+
 /* 5. CONTACT FORM */
 .contact-container {
     max-width: 600px;
@@ -478,4 +658,107 @@ body {
 .hobby-card:hover h3, 
 .hobby-card:hover p {
     color: white;
+}
+
+/* Class untuk elemen yang akan dianimasikan */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Class saat elemen masuk ke layar */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variasi: Slide dari kiri */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Variasi: Slide dari kanan */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* LIGHTBOX STYLING */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active { display: flex; animation: fadeIn 0.3s ease; }
+
+.lightbox-content {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: 0.3s ease;
+}
+
+.lightbox.active img { transform: scale(1); }
+
+#lightbox-caption {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Navigasi */
+.prev, .next {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover { background: var(--primary-color); }
+.prev { left: 50px; }
+.next { right: 50px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

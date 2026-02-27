@@ -29,7 +29,7 @@
 
     <header id="home" class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content reveal-left">
                 <p class="welcome-text">WELCOME TO MY WORLD</p>
                 <h1>Hi, I’m <span class="highlight">Khay</span><br>
                     a <span class="highlight" id="typing-text">Software Developer</span><br>
@@ -40,8 +40,8 @@
                     Fokus pada detail dan kepuasan pengguna.
                 </p>
                 
-                <div class="about">
-                    <button class="btn-about">About Me</button>
+                <div>
+                <a href="#about"><button class="btn-about">About Me</button></a>
                 </div>
                 <div class="hero-footer">
                     <div class="social-box">
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="hero-image">
+            <div class="hero-image reveal-right">
                 <div class="image-bg-card">
                     <img src="aset/khay.PNG" alt="Khay Profile">
                 </div>
@@ -71,28 +71,109 @@
         </div>
     </header>
 
-    <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-img"><img src="aset/home-absensi.png" alt="Absensi System"></div>
-                <div class="project-info">
-                    <h3>Project Absensi</h3>
-                    <p>Web Design & Development</p>
+<section id="projects" class="section">
+    <h2 class="section-title reveal">My <span class="highlight">Portfolio</span></h2>
+    <div class="project-grid">
+        <div class="project-card reveal" onclick="openLightbox('Project Absensi', ['aset/home-absensi.png', 'aset/absensi-detail.png', 'aset/absensi-detail1.png', 'aset/absensi-detail2.png'])">
+            <div class="project-img">
+                <img src="aset/home-absensi.png" alt="Absensi System">
+                <div class="project-overlay">
+                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
                 </div>
             </div>
-             <div class="project-card">
-                <div class="project-img"><img src="aset/home-pickitup.png" alt="Guitar Learn Web"></div>
-                <div class="project-info">
-                    <h3>Project Pick It Up</h3>
-                    <p>Web Design & Development</p>
+            <div class="project-info">
+                <div class="project-tags"><span>Laravel</span><span>MySQL</span></div>
+                <h3>Project Absensi</h3>
+                <p>Klik untuk melihat detail sistem kehadiran.</p>
+            </div>
+        </div>
+
+        <div class="project-card reveal" onclick="openLightbox('Pick It Up', ['aset/home-pickitup.png', 'aset/pickitup-detail.png', 'aset/pickitup-detail1.png', 'aset/pickitup-detail2.png'])">
+            <div class="project-img">
+                <img src="aset/home-pickitup.png" alt="Pick It Up">
+                <div class="project-overlay">
+                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
                 </div>
             </div>
-             <div class="project-card">
-                <div class="project-img"><img src="aset/home-tuturaja.png" alt="Website Tuturaja"></div>
-                <div class="project-info">
-                    <h3>Tutur Aja App</h3>
-                    <p>Mobile Apps</p>
+            <div class="project-info">
+                <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
+                <h3>Pick It Up</h3>
+                <p>Klik untuk melihat detail platform belajar gitar.</p>
+            </div>
+        </div>
+        <div class="project-card reveal" onclick="openLightbox('Tuturaja', ['aset/home-tuturaja.png', 'aset/tuturaja-detail.png', 'aset/tuturaja-detail1.png', 'aset/tuturaja-detail2.png'])">
+            <div class="project-img">
+                <img src="aset/home-tuturaja.png" alt="Tuturaja">
+                <div class="project-overlay">
+                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
+                <h3>Tuturaja</h3>
+                <p>Klik untuk melihat detail platform belajar bahasa Jawa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Detail Project">
+        <h3 id="lightbox-caption">Caption</h3>
+    </div>
+    <button class="next" onclick="changeImage(1)">&#10095;</button>
+</div>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-img-side reveal-left">
+                    <div class="experience-badge">
+                        <span class="num">2+</span>
+                        <span class="text">Years of<br>Experience</span>
+                    </div>
+                    <div class="img-container">
+                        <img src="aset/khay.PNG" alt="Khay About">
+                    </div>
+                    <div class="shape-blob"></div>
+                </div>
+
+                <div class="about-content-side">
+                    <h2 class="section-subtitle reveal">MY BIOGRAPHY</h2>
+                    <h1 class="section-title reveal">Ingin Mengenal <span class="highlight">Saya</span> Lebih Dekat?</h1>
+                    <p class="about-desc reveal">
+                        Saya adalah seorang Software Developer yang bersemangat dalam menciptakan solusi digital yang tidak hanya berfungsi dengan baik, tetapi juga memanjakan mata pengguna. 
+                        Berbasis di Indonesia, saya mengombinasikan keahlian teknis dengan estetika desain untuk membantu bisnis bertransformasi ke ranah digital.
+                    </p>
+                    
+                    <div class="personal-info reveal">
+                        <div class="info-item">
+                            <span class="label">Name:</span>
+                            <span class="value">Khairan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Email:</span>
+                            <span class="value">khairan@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Location:</span>
+                            <span class="value">Indonesia</span>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid reveal-right">
+                        <div class="stat-card">
+                            <h3>50+</h3>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>20+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,6 +283,74 @@ function type() {
 
 // Mulai animasi
 document.addEventListener("DOMContentLoaded", type);
+
+function reveal() {
+    // Mengambil semua elemen yang punya class reveal, reveal-left, atau reveal-right
+    const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+    reveals.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150; // Jarak muncul (pixel) sebelum elemen terlihat penuh
+
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active");
+        } else {
+            // Opsional: hapus baris di bawah jika ingin animasi hanya sekali jalan
+            element.classList.remove("active"); 
+        }
+    });
+}
+
+// Jalankan fungsi saat discroll
+window.addEventListener("scroll", reveal);
+
+// Jalankan fungsi sekali saat halaman baru dibuka (untuk cek elemen di paling atas)
+document.addEventListener("DOMContentLoaded", reveal);
+
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(title, images) {
+    currentImages = images;
+    currentIndex = 0;
+    
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const caption = document.getElementById("lightbox-caption");
+
+    lightboxImg.src = currentImages[currentIndex];
+    caption.innerText = title;
+    
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden"; // Stop scrolling
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").classList.remove("active");
+    document.body.style.overflow = "auto";
+}
+
+function changeImage(step) {
+    currentIndex += step;
+    
+    // Loop back to start or end
+    if (currentIndex >= currentImages.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = currentImages.length - 1;
+
+    const img = document.getElementById("lightbox-img");
+    img.style.opacity = "0"; // Animasi transisi antar gambar
+    
+    setTimeout(() => {
+        img.src = currentImages[currentIndex];
+        img.style.opacity = "1";
+    }, 200);
+}
+
+// Close with Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+});
 </script>
 </body>
 </html>
