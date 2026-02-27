@@ -71,61 +71,60 @@
         </div>
     </header>
 
-<section id="projects" class="section">
-    <h2 class="section-title reveal">My <span class="highlight">Portfolio</span></h2>
-    <div class="project-grid">
-        <div class="project-card reveal" onclick="openLightbox('Project Absensi', ['aset/home-absensi.png', 'aset/absensi-detail.png', 'aset/absensi-detail1.png', 'aset/absensi-detail2.png'])">
-            <div class="project-img">
-                <img src="aset/home-absensi.png" alt="Absensi System">
-                <div class="project-overlay">
-                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+    <section id="projects" class="section">
+        <h2 class="section-title reveal">My <span class="highlight">Portfolio</span></h2>
+        <div class="project-grid">
+            <div class="project-card reveal" onclick="openLightbox('Project Absensi', ['aset/home-absensi.png', 'aset/absensi-detail.png', 'aset/absensi-detail1.png', 'aset/absensi-detail2.png'])">
+                <div class="project-img">
+                    <img src="aset/home-absensi.png" alt="Absensi System">
+                    <div class="project-overlay">
+                        <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span>Laravel</span><span>MySQL</span></div>
+                    <h3>Project Absensi</h3>
+                    <p>Klik untuk melihat detail sistem kehadiran.</p>
                 </div>
             </div>
-            <div class="project-info">
-                <div class="project-tags"><span>Laravel</span><span>MySQL</span></div>
-                <h3>Project Absensi</h3>
-                <p>Klik untuk melihat detail sistem kehadiran.</p>
-            </div>
-        </div>
 
-        <div class="project-card reveal" onclick="openLightbox('Pick It Up', ['aset/home-pickitup.png', 'aset/pickitup-detail.png', 'aset/pickitup-detail1.png', 'aset/pickitup-detail2.png'])">
-            <div class="project-img">
-                <img src="aset/home-pickitup.png" alt="Pick It Up">
-                <div class="project-overlay">
-                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+            <div class="project-card reveal" onclick="openLightbox('Pick It Up', ['aset/home-pickitup.png', 'aset/pickitup-detail.png', 'aset/pickitup-detail1.png', 'aset/pickitup-detail2.png'])">
+                <div class="project-img">
+                    <img src="aset/home-pickitup.png" alt="Pick It Up">
+                    <div class="project-overlay">
+                        <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
+                    <h3>Pick It Up</h3>
+                    <p>Klik untuk melihat detail platform belajar gitar.</p>
                 </div>
             </div>
-            <div class="project-info">
-                <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
-                <h3>Pick It Up</h3>
-                <p>Klik untuk melihat detail platform belajar gitar.</p>
-            </div>
-        </div>
-        <div class="project-card reveal" onclick="openLightbox('Tuturaja', ['aset/home-tuturaja.png', 'aset/tuturaja-detail.png', 'aset/tuturaja-detail1.png', 'aset/tuturaja-detail2.png'])">
-            <div class="project-img">
-                <img src="aset/home-tuturaja.png" alt="Tuturaja">
-                <div class="project-overlay">
-                    <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+            <div class="project-card reveal" onclick="openLightbox('Tuturaja', ['aset/home-tuturaja.png', 'aset/tuturaja-detail.png', 'aset/tuturaja-detail1.png', 'aset/tuturaja-detail2.png'])">
+                <div class="project-img">
+                    <img src="aset/home-tuturaja.png" alt="Tuturaja">
+                    <div class="project-overlay">
+                        <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
+                    <h3>Tuturaja</h3>
+                    <p>Klik untuk melihat detail platform belajar bahasa Jawa.</p>
                 </div>
             </div>
-            <div class="project-info">
-                <div class="project-tags"><span>React JS</span><span>Firebase</span></div>
-                <h3>Tuturaja</h3>
-                <p>Klik untuk melihat detail platform belajar bahasa Jawa.</p>
-            </div>
         </div>
+    </section>
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Detail Project">
+            <h3 id="lightbox-caption">Caption</h3>
+        </div>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
     </div>
-</section>
-
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-    <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Detail Project">
-        <h3 id="lightbox-caption">Caption</h3>
-    </div>
-    <button class="next" onclick="changeImage(1)">&#10095;</button>
-</div>
 
     <section id="about" class="about-section">
         <div class="container">
@@ -179,49 +178,98 @@
         </div>
     </section>
 
-    <section id="hobbies">
-        <h2 class="section-title">Hobbies & Interests</h2>
+    <section id="hobbies" class="section">
+        <h2 class="section-title reveal">Hobbies & <span class="highlight">Interests</span></h2>
         <div class="hobbies-container">
-            <div class="hobby-card">
-                <i class="fas fa-camera"></i>
+            <div class="hobby-card reveal">
+                <div class="hobby-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
                 <h3>Photography</h3>
-                <p>Capturing moments and creating visual stories.</p>
+                <p>Capturing moments and creating visual stories through the lens.</p>
             </div>
-            <div class="hobby-card">
-                <i class="fas fa-music"></i>
-                <h3>Music</h3>
-                <p>Exploring different genres and creating playlists.</p>
+            <div class="hobby-card reveal">
+                <div class="hobby-icon">
+                    <i class="fas fa-guitar"></i>
+                </div>
+                <h3>Playing Guitar</h3>
+                <p>Expressing creativity through strings and melodies.</p>
             </div>
-            <div class="hobby-card">
-                <i class="fas fa-book"></i>
-                <h3>Reading</h3>
-                <p>Diving into fiction and non-fiction books.</p>
+            <div class="hobby-card reveal">
+                <div class="hobby-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Open Source</h3>
+                <p>Contributing to the community and exploring new tech stacks.</p>
             </div>
+        </div>
     </section>
 
     <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <h2 class="section-title reveal">Let's <span class="highlight">Connect</span></h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info-side reveal-left">
+                <h3>Contact Information</h3>
+                <p>Jangan ragu untuk menyapa! Saya selalu terbuka untuk diskusi proyek baru atau sekadar berbagi kopi digital.</p>
                 
-                <input type="hidden" name="access_key" value="fff6bf40-7df9-4db4-aa90-9bb4ef19ffee">
-
-                <div class="input-group">
-                    <input type="text" name="name" placeholder="Nama Kamu" required>
+                <div class="info-details">
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span>Email Me</span>
+                            <p>khairan@example.com</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Location</span>
+                            <p>Bandung, Indonesia</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email Kamu" required>
-                </div>
-                <div class="input-group">
-                    <textarea name="message" rows="5" placeholder="Pesan untuk saya..." required></textarea>
-                </div>
+            </div>
 
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <div class="contact-container reveal-right">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="fff6bf40-7df9-4db4-aa90-9bb4ef19ffee">
 
-                <button type="submit" class="btn btn-submit">Kirim Pesan</button>
-            </form>
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Nama Kamu" required>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email Kamu" required>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="message" rows="5" placeholder="Pesan untuk saya..." required></textarea>
+                        <span class="bar"></span>
+                    </div>
+
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" class="btn-submit">
+                        <span>Kirim Pesan</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Khay<span>.</span></div>
+            <p>© 2026 Khairan. Built with ❤️ and Clean Code.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 <script>
 const toggleBtn = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme');
