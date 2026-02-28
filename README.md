@@ -1,4 +1,4 @@
-# 🚀 Modern Multi-Language Portfolio | It's Khay
+# 🚀 Modern Multi-Language Portfolio | My Portfolio
 
 ![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-blue?style=for-the-badge&logo=github)
 ![Version](https://img.shields.io/badge/Version-1.0.0-success?style=for-the-badge)
@@ -32,7 +32,7 @@ Ingin mencoba menjalankan proyek ini di komputer kamu?
 
 1. **Clone repositori ini**
    ```bash
-   git clone [https://github.com/CERULEDGE-4Khay/My-Portfolio.git](https://github.com/CERULEDGE-4Khay/My-Portfolio.git)
+   git clone [https://github.com/mochamadkhairan/My-Portfolio.git](https://github.com/mochamadkhairan/My-Portfolio.git)
 Masuk ke direktori
 
 Bash
@@ -41,9 +41,9 @@ Buka di Browser
 Cukup buka file index.html menggunakan browser pilihan Anda atau gunakan ekstensi Live Server di VS Code.
 
 📸 **Tampilan Website**
-[![Preview Website Portofolio](aset/fullpage.png)](https://CERULEDGE-4Khay.github.io/My-Portfolio/)
+[![Preview Website Portofolio](aset/fullpage.png)](https://github.com/mochamadkhairan/My-Portfolio/)
 
-🔗 **Live Preview:** [Lihat Website Saya Di Sini](https://CERULEDGE-4Khay.github.io/My-Portfolio/)
+🔗 **Live Preview:** [Lihat Website Saya Di Sini](https://github.com/mochamadkhairan/My-Portfolio/)
 
 🤝 Mari Terhubung!
 Saya selalu terbuka untuk kolaborasi, diskusi mengenai pengembangan web, atau peluang kerja baru. Jangan ragu untuk menyapa!
